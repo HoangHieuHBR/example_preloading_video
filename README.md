@@ -12,4 +12,4 @@
 
 ### Logic 🎯
 
-![lib](images/logic.png)
+![lib]([images/logic.png](https://raw.githubusercontent.com/Shadow60539/flutter_preload_videos/master/images/logic.png)https://raw.githubusercontent.com/Shadow60539/flutter_preload_videos/master/images/logic.png)
