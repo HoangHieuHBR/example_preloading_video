@@ -12,4 +12,4 @@
 
 ### Logic 🎯
 
-![lib]([images/logic.png](https://raw.githubusercontent.com/Shadow60539/flutter_preload_videos/master/images/logic.png)https://raw.githubusercontent.com/Shadow60539/flutter_preload_videos/master/images/logic.png)
+![lib](https://github.com/HoangHieuHBR/example_preloading_video/assets/121141914/52f18fd6-b70b-4f5b-b485-50f7bb07b133)
