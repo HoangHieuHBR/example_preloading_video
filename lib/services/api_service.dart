@@ -44,6 +44,21 @@ class ApiService {
     'https://assets.mixkit.co/videos/preview/mixkit-young-woman-waking-up-in-the-morning-42896-large.mp4'
   ];
 
+  static final List<String> _audios = [
+    'https://assets.mixkit.co/active_storage/sfx/39/39-preview.mp3',
+    'https://assets.mixkit.co/active_storage/sfx/995/995-preview.mp3',
+    'https://assets.mixkit.co/active_storage/sfx/667/667-preview.mp3',
+    'https://assets.mixkit.co/active_storage/sfx/1000/1000-preview.mp3',
+    'https://assets.mixkit.co/active_storage/sfx/488/488-preview.mp3',
+    'https://assets.mixkit.co/active_storage/sfx/1486/1486-preview.mp3',
+    'https://assets.mixkit.co/active_storage/sfx/518/518-preview.mp3',
+    'https://assets.mixkit.co/active_storage/sfx/916/916-preview.mp3',
+    'https://assets.mixkit.co/active_storage/sfx/2909/2909-preview.mp3',
+    'https://assets.mixkit.co/active_storage/sfx/2290/2290-preview.mp3',
+
+
+  ];
+
   /// Simulate api call
   static Future<List<String>> getVideos({int id = 0}) async {
     // No more videos
@@ -58,5 +73,20 @@ class ApiService {
     }
 
     return _videos.sublist(id, id + kNextLimit);
+  }
+
+  static Future<List<String>> getAudios({int id = 0}) async {
+    // No more videos
+    if ((id >= _audios.length)) {
+      return [];
+    }
+
+    await Future.delayed(const Duration(seconds: kLatency));
+
+    if ((id + kNextLimit >= _audios.length)) {
+      return _audios.sublist(id, _audios.length);
+    }
+
+    return _audios.sublist(id, id + kNextLimit);
   }
 }

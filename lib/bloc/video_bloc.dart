@@ -53,6 +53,8 @@ class VideoBloc extends Bloc<VideoEvent, VideoState> {
         final bool shouldFetch = (e.index + kPreloadLimit) % kNextLimit == 0 &&
             state.urls.length == e.index + kPreloadLimit;
 
+        log("Fetch: $shouldFetch");
+
         if (shouldFetch) {
           createIsolate(e.index);
         }
@@ -85,7 +87,9 @@ class VideoBloc extends Bloc<VideoEvent, VideoState> {
     if (state.urls.length > index && index >= 0) {
       final VideoPlayerController controller = state.controllers[index]!;
 
-      controller.play();
+      controller.play().then((value) => controller.setVolume(1));
+
+      controller.setLooping(true);
 
       log('🚀🚀🚀 PLAYING $index');
     }
